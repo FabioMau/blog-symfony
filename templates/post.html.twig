@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+
+{% block body %}
+
+    <article style="width:100%;">
+        <h1>
+            {{ post.title }}
+        </h1>
+        <div class="info">
+            <p class="time">
+                Di
+                <i class="fas fa-user"></i>&nbsp;{{ post.createdBy.username }}
+                creato il
+                {{ post.createdAt|date('d/m/Y') }}
+                alle
+                {{ post.createdAt|date('H:i') }}</p>
+        </div>
+        <p class="text">{{ post.text }}</p>
+
+        {% if (is_granted('ROLE_ADMIN') or app.user == post.createdBy) %}
+            <div class="controls">
+                <a class="btn edit" href="{{ path('post_edit', { 'id': post.id }) }}">
+                    <i class="fas fa-edit"></i>
+                    Modifica</a>
+                <a class="btn delete" href="{{ path('post_delete', { 'id': post.id }) }}">
+                    <i class="fas fa-trash-alt"></i>
+                    Elimina</a>
+            </div>
+        {% endif %}
+
+        <h4>Commenti:</h4>
+
+        {% if app.user != null %}
+            <a class="btn new" href="{{ path('comment_new', { 'id': post.id }) }}">
+                <i class="fas fa-edit"></i>
+                Nuovo commento</a>
+        {% endif %}
+
+        {% for comment in post.comments %}
+            <article style="border: 1px solid #ddd">
+                <h1>{{ comment.createdBy.username }}</h1>
+                <div class="info">
+                    <p class="time">
+
+                        Creato il
+                        {{ comment.createdAt|date('d/m/Y') }}
+                        alle
+                        {{ comment.createdAt|date('H:i') }}</p>
+                </div>
+                <p class="text">{{ comment.text }}</p>
+
+                {% if (is_granted('ROLE_ADMIN') or app.user == comment.createdBy) %}
+                    <div class="controls">
+                        <a class="btn edit" href="{{ path('comment_edit', { 'id': post.id, 'idc': comment.id,}) }}">
+                            <i class="fas fa-edit"></i>
+                            Modifica</a>
+                        <a class="btn delete" href="{{ path('comment_delete', { 'id': post.id, 'idc': comment.id,}) }}">
+                            <i class="fas fa-trash-alt"></i>
+                            Elimina</a>
+                    </div>
+                {% endif %}
+            </article>
+        {% endfor %}
+    </article>
+{% endblock %}

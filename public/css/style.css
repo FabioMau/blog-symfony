@@ -1,0 +1,251 @@
+* {
+  font-family: Verdana;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+}
+
+nav.navbar {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav.navbar a {
+  text-decoration: none;
+}
+
+nav.navbar .title a {
+  display: block;
+  color: inherit;
+  font-size: 24px;
+  padding: 10px 20px;
+}
+
+nav.navbar .title a:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #fff;
+  color: #333;
+}
+
+nav.navbar .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav.navbar .menu a {
+  display: block;
+  color: inherit;
+  font-size: 19px;
+  padding: 13px 20px;
+}
+
+nav.navbar .menu a:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #fff;
+  color: #333;
+}
+
+.filters {
+  margin: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .filters {
+    width: 80%;
+    margin: 10px auto;
+  }
+}
+
+.filters > * {
+  margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+  .filters form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.filters form > * {
+  margin: 0 10px;
+}
+
+.filters form div {
+  text-align: center;
+}
+
+.filters form input {
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .filters form input {
+    width: 100%;
+  }
+}
+
+form {
+  text-align: center;
+}
+
+form input,
+form textarea {
+  width: 90%;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid #ddd;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  margin: 10px;
+}
+
+@media (min-width: 768px) {
+  form input,
+  form textarea {
+    width: 20%;
+  }
+}
+
+article {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 12px;
+  margin: 10px 0;
+  background-color: #fff;
+  color: #333;
+}
+
+@media (min-width: 768px) {
+  article {
+    width: 80%;
+    margin: 10px auto;
+  }
+}
+
+article h1 {
+  margin: 0;
+}
+
+article h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+article .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 5px;
+}
+
+article .info p {
+  margin: 5px 0;
+  color: #777;
+  font-size: 0.75em;
+}
+
+article .text {
+  margin: 5px 0;
+}
+
+article .controls {
+  margin: 20px 0;
+}
+
+article .btn.new {
+  display: block;
+  margin: auto;
+}
+
+.dnone {
+  display: none !important;
+}
+
+.dblock {
+  display: block !important;
+}
+
+@media (min-width: 768px) {
+  .l-dnone {
+    display: none !important;
+  }
+  .l-dblock {
+    display: block !important;
+  }
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.btn.new {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn.edit {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn.delete {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+/*# sourceMappingURL=style.css.map */

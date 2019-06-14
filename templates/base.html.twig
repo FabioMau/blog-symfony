@@ -2,10 +2,26 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        <nav class="navbar">
+            <div class="title">
+                <a href="{{ path('index') }}">SymfonyBlog</a>
+            </div> 
+            <div class="menu">
+             {% if app.user != null %}
+                <a href="{{ path('app_logout') }}">Logout</a>
+             {% else %}
+                <a href="{{ path('app_login') }}">Accedi</a>
+                <a href="{{ path('app_register') }}" class="dnone l-dblock">Registrati</a>
+             {% endif %}
+            </div>
+        </nav>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

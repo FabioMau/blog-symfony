@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SymfonyBlog{% endblock %}
+
+{% block stylesheets %}
+<style>
+    h1,a {display:block;text-align:center;}
+</style>
+{% endblock %}
+
+{% block body %}
+
+    <h1 class="success">{{ message }}</h1>
+    <a href="{{ path('index') }}">Torna alla home</a>
+
+{% endblock %}

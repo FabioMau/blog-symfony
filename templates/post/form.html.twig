@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        h1 {
+            display: block;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+
+    {{ form_start(PostForm) }}
+    <div>
+        {{ form_label(PostForm.title, 'Titolo') }}
+        {{ form_widget(PostForm.title) }}
+    </div>
+    <div>
+        {{ form_label(PostForm.text, 'Testo') }}
+        {{ form_widget(PostForm.text) }}
+    </div>
+    <button class="btn">{{ title }}</button>
+    {{ form_end(PostForm) }}
+{% endblock %}

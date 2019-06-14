@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SymfonyBlog
+{% endblock %}
+
+{% block body %}
+    <div class="filters">
+        <a class="btn new" href="{{ path('post_new') }}">
+            <i class="fas fa-edit"></i>
+            Nuovo articolo</a>
+        <form action="{{ path('index') }}">
+            <div>
+                <label>Cerca titolo o username</label>
+                <br>
+                <input type="text" name="q" placeholder="Cerca titolo o username" value="{{ query | default("") }}">
+            </div>
+            <div>
+                <label>Filtra per data minore a
+                </label>
+                <br>
+                <input type="date" name="datele" value="{{ datele | default("") }}">
+            </div>
+            <div>
+                <label>Filtra per data maggiore a
+                </label>
+                <br>
+                <input type="date" name="datege" value="{{ datege | default("") }}">
+            </div>
+            <div>
+                <input class="btn new" type="submit" value="Cerca">
+            </div>
+        </form>
+    </div>
+    {% for post in posts %}
+        <article>
+            <h1>
+                <a href="{{ path('post_show', { 'id': post.id }) }}">{{ post.title }}</a>
+            </h1>
+            <div class="info">
+                <p class="time">
+                    Di
+                    <i class="fas fa-user"></i>&nbsp;{{ post.createdBy.username }}
+                    creato il
+                    {{ post.createdAt|date('d/m/Y') }}
+                    alle
+                    {{ post.createdAt|date('H:i') }}</p>
+
+                <div>
+                    <i class="fas fa-comments"></i>&nbsp;{{ post.comments|length }}</div>
+            </div>
+            <p class="text">{{ post.text|length > 200 ? post.text|slice(0, 200) ~ '...' : post.text }}</p>
+
+        </article>
+    {% endfor %}
+{% endblock %}

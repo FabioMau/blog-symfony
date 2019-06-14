@@ -1,0 +1,42 @@
+nav.navbar {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+  
+    a {
+      text-decoration: none;
+    }
+  
+    .title {
+      a {
+        display: block;
+        color: inherit;
+        font-size: 24px;
+        padding: 10px 20px;
+  
+        &:hover {
+          transition: 0.5s;
+          background-color: #fff;
+          color: #333;
+        }
+      }
+    }
+  
+    .menu {
+      display: flex;
+      a {
+        display: block;
+        color: inherit;
+        font-size: 19px;
+        padding: 13px 20px;
+  
+        &:hover {
+          transition: 0.5s;
+          background-color: #fff;
+          color: #333;
+        }
+      }
+    }
+  }

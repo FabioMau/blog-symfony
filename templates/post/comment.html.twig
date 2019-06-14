@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        h1 {
+            display: block;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+
+    {{ form_start(CommentForm) }}
+    <div>
+        {{ form_label(CommentForm.text, 'Testo') }}
+        {{ form_widget(CommentForm.text) }}
+    </div>
+    <button class="btn">{{ title }}</button>
+    {{ form_end(CommentForm) }}
+{% endblock %}
